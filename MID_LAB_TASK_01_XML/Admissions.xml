@@ -1,0 +1,30 @@
+<admissions>
+    
+    <person SL="23">
+        <name>John Carter</name>
+        <admissiondate>
+            <date>25</date>
+            <month>12</month>
+            <year>2015</year>
+        </admissiondate>
+    </person>
+
+    <person SL="29">
+        <name>Bob Marshal</name>
+        <admissiondate>
+            <date>13</date>
+            <month>01</month>
+            <year>1999</year>
+        </admissiondate>
+    </person>
+
+    <person SL="35">
+        <name>Clark Kent</name>
+        <admissiondate>
+            <date>17</date>
+            <month>06</month>
+            <year>2005</year>
+        </admissiondate>
+    </person>
+
+</admissions>
