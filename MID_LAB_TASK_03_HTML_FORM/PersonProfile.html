@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Profile Form</title>
+</head>
+
+<body>
+    <style>
+        .ppText {
+            text-align: center;
+            height: 80px;
+        }
+
+        .infoText {
+            margin-left: 10px;
+        }
+        .btnText
+        {
+           text-align: right;
+        }
+    </style>
+    <table border="1" width="700px">
+        <tr class="ppText">
+            <td colspan="3">PERSON PROFILE</td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Name</label>
+            </td>
+            <td>
+                <input type="text" name="name" id="" class="infoText">
+            </td>
+            <td width="100px"></td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Email</label>
+            </td>
+            <td>
+                <input type="text" name="email" id="" class="infoText">
+            </td>
+            <td></td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Gender</label>
+            </td>
+            <td>
+                <input type="radio" name="gender" value="Male" id="" class="infoText"> Male
+                <input type="radio" name="gender" value="Female" id=""> Female
+                <input type="radio" name="gender" value="Other" id=""> Other
+            </td>
+            <td></td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Date Of Birth</label>
+            </td>
+            <td>
+                <input type="text" name="dd" id="" size="4" class="infoText"> /
+                <input type="text" name="dd" id="" size="4"> /
+                <input type="text" name="dd" id="" size="4"> (dd/mm/yyyy)
+            </td>
+            <td></td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Blood Group</label>
+            </td>
+            <td>
+                <select name="" id="" class="infoText">
+                    <option value="">A+</option>
+                    <option value="">O+</option>
+                    <option value="">B+</option>
+                    <option value="">O-</option>
+                    <option value="">AB+</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Degree</label>
+            </td>
+            <td>
+                <input type="checkbox" name="degree" value="SSC" id="" class="infoText"> SSC
+                <input type="checkbox" name="degree" value="HSC" id=""> HSC
+                <input type="checkbox" name="degree" value="BSc" id=""> BSc.
+                <input type="checkbox" name="degree" value="BSc" id=""> MSc.
+            </td>
+            <td></td>
+        </tr>
+        <tr height="40px">
+            <td width="150px">
+                <label for="" class="infoText">Photo</label>
+            </td>
+            <td>
+                <input type="file" name="" value="" class="infoText">
+            </td>
+            <td></td>
+        </tr>
+        <tr height="40px">
+            <td colspan="3"></td>
+
+        </tr>
+        <tr >
+            <td colspan="3" height="40px" class="btnText" >
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
