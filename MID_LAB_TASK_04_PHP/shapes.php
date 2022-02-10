@@ -1,23 +1,57 @@
 <?php 
 
-    for($i = 0; $i <3; $i++)
+    function starPrint()
     {
-        for($j = 0; $j <=$i; $j++)
+        for($i = 0; $i <3; $i++)
         {
-            echo "*";
+            for($j = 0; $j <=$i; $j++)
+            {
+                 echo "*";
+            }
+            echo "<br>";
         }
-        echo "<br>";
     }
 
-    for($i = 3; $i >0; $i--)
+    function reversePrintNum()
     {
-        for($j = 1; $j <=$i; $j++)
+        for($i = 3; $i >0; $i--)
         {
-            echo $j;
+            for($j = 1; $j <=$i; $j++)
+            {
+                echo $j;
+            }
+            
+            echo "<br>";
         }
-        echo "<br>";
     }
 
+    function stringPrint()
+    {
+        $input = ['1'=>"A",'2'=>"B C",'3'=>"D E F"];
 
+        foreach($input as $i)
+        {
+            echo $i."<br>";
+        }
+    }
+
+    echo "<table border=1 width=500px>
+        
+        <tr> 
+                
+                <td>";
+                        starPrint();
+                echo "</td>
+                <td>";
+                        reversePrintNum();
+                echo "</td>
+                <td>";
+                        stringPrint();
+                echo "</td>
+
+        </tr>
+
+    </table>
+    "
 
 ?>
