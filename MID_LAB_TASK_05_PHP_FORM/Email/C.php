@@ -9,7 +9,7 @@
     
     if($_REQUEST['email'] == null)
     {
-      $emailError = "No email is submitted.";
+      $emailError = "No email is found.";
     }
     else
     {
@@ -18,8 +18,6 @@
     }
    
   }
-
-
 
 ?>
 
