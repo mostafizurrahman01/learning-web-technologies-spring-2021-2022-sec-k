@@ -1,6 +1,7 @@
 <?php 
-	session_start();
-	if(isset($_COOKIE['status'])){
+    session_start();
+    if(isset($_COOKIE['status'])){
+
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +30,7 @@
             border-right: 0px solid;
         }
         .namePrint{
-            font-size:40px;
-            margin-left:20px;
+            size:100px;
         }
         .footer{
             border:none;
@@ -39,9 +39,6 @@
         .footerH{
             border:2px solid black;
         }
-        .title{
-            border:none;
-        }
     </style>
         <table border="2" class="table" width="100%">
             <tr class="top" >
@@ -49,17 +46,27 @@
                     <img  src="https://i.ibb.co/rdtj8BQ/image.png" alt=""></a>
                 </td>
                 <td class="editNav">
-                    <a href="homePage.php">Home</a> |
-                    <a href="login.php">Login</a> |
-                    <a href="Registration.php">Registration</a> |
+                    Logged in as
+                    <a href="viewProfile.php"><?=$_SESSION['user']['name']?></a> |
+                    <a href="logout.php">Logout</a>
                 </td>
             </tr>
-            <tr height="100px" >
-
-                <td class="title">
-                    <h4 class="namePrint">Welcome To xCompany</h4>
-                </td>
-            </tr>
+            <tr width="600px">
+            <td width="100px">
+                <b>Account</b><br/>
+                <ul>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="viewProfile.php">View Profile</a></li>
+                    <li><a href="editProfile.php">Edit Profile</a></li>
+                    <li><a href="changePP.php">Change Profile Picture</a></li>
+                    <li><a href="changePassword.php">Change Password</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </td>
+            <td width="400px">
+                <h4 class="namePrint">Welcome <?=$_SESSION['user']['name'] ?></h4>
+            </td>
+        </tr>
         <tr class="footerH">
             <td colspan="2" class="footer">
                 <h3>Copyright @ 2017</h3> 
@@ -70,9 +77,9 @@
 </body>
 </html>
 
-
-<?php
-	}else{
-		echo "invalid request";
-	}
+<?php 
+    }else
+    {
+        echo "Log in first.";
+    }
 ?>

@@ -15,7 +15,7 @@
                 $_SESSION['status']=true;
                 setcookie('status','true',time()+3600, '/');
 
-                header('Location:homePage.php');
+                header('Location:dashboard.php');
             }
             else {
                 echo 'Invalid user';
