@@ -107,9 +107,9 @@
                     </td>
 
                     <td>
-                        <input type="text" name="dod" id="" size="4" class="infoText"> /
-                        <input type="text" name="dob" id="" size="4"> /
-                        <input type="text" name="dob" id="" size="4"> (dd/mm/yyyy)
+                        <input type="text" name="dd" id="" size="4" class="infoText"> /
+                        <input type="text" name="mm" id="" size="4"> /
+                        <input type="text" name="yyyy" id="" size="4"> (dd/mm/yyyy)
                     </td>
                 </tr>
 

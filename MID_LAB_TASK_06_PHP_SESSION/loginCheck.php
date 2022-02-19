@@ -13,7 +13,15 @@
             if($user['username'] == $username && $user['password'] == $password)
             {
                 $_SESSION['status']=true;
-                setcookie('status','true',time()+3600, '/');
+
+                if(isset($_SESSION['remember'])){
+
+                    setcookie('status', 'true', time()+3600, '/');
+                    
+                }
+                else{
+                    setcookie('status','true');
+                }
 
                 header('Location:dashboard.php');
             }
@@ -27,6 +35,5 @@
         }
     }
 
-
-
+    // setcookie(session_name(),session_id(),time()+ 3600);
 ?>

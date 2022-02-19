@@ -9,7 +9,7 @@
 		$password = $_REQUEST['password'];
         $confirmPassword = $_REQUEST['confirmPassword'];
 		$gender = $_REQUEST['gender'];
-		$dob = $_REQUEST['dob'];	
+		$dob = ['dd' => $_REQUEST['dd'], 'mm' => $_REQUEST['mm'], 'yyyy' => $_REQUEST['yyyy'] ];	
 
 		if($name != null && $email != null && $username != null && $password != null && $confirmPassword != null 
 					&& $gender != null && $dob != null){

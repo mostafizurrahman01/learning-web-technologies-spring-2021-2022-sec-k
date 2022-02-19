@@ -109,7 +109,7 @@
                                         Date Of Birth
                                     </td>
                                     <td>
-                                        : <?=$_SESSION['user']['dob']?>
+                                        : <?=$_SESSION['user']['dob']['dd']?><?=$_SESSION['user']['dob']['mm']?><?=$_SESSION['user']['dob']['yyyy']?> 
                                     </td>
                                 </tr>
                                 <tr>

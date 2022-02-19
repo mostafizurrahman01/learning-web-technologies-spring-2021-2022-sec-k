@@ -1,8 +1,3 @@
-<?php 
-	session_start();
-	if(isset($_COOKIE['status'])){
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Public Home</title>
 </head>
 
 <body>
@@ -43,23 +38,26 @@
             border:none;
         }
     </style>
-        <table border="2" class="table" width="100%">
-            <tr class="top" >
-                <td class="editImg" >
+
+    <table border="2" class="table" width="100%">
+        <tr class="top" >
+            <td class="editImg" >
                     <img  src="https://i.ibb.co/rdtj8BQ/image.png" alt=""></a>
-                </td>
-                <td class="editNav">
+            </td>
+            <td class="editNav">
                     <a href="homePage.php">Home</a> |
                     <a href="login.php">Login</a> |
                     <a href="Registration.php">Registration</a> |
-                </td>
-            </tr>
-            <tr height="100px" >
+            </td>
+        </tr>
 
-                <td class="title">
+        <tr height="100px" >
+
+            <td class="title">
                     <h4 class="namePrint">Welcome To xCompany</h4>
                 </td>
-            </tr>
+        </tr>
+
         <tr class="footerH">
             <td colspan="2" class="footer">
                 <h3>Copyright @ 2017</h3> 
@@ -69,10 +67,3 @@
     </table>
 </body>
 </html>
-
-
-<?php
-	}else{
-		echo "invalid request";
-	}
-?>

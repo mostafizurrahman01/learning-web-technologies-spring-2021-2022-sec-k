@@ -74,7 +74,7 @@
                 <td width="400px">
                     <fieldset>
                         <legend>PROFILE</legend>
-                            <form method="post" action="">
+                            <form method="post" action="editProfileCorrection.php">
                                 <table>
                                     <tr>
                                         <td >
@@ -93,11 +93,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="viewC">
+                                        <td>
                                         Gender :
                                     </td>
                                     <td>
-                                        <input type="gender" name="gender" value="<?=$_SESSION['user']['gender']?>">
+                                        <input type="radio" name="gender" <?php if ($_SESSION['user']['gender'] == 'Male')  echo ' checked="checked"';?> value="Male"> Male
+                                        <input type="radio" name="gender" <?php if ($_SESSION['user']['gender'] == 'Female')  echo ' checked="checked"';?> value="Female"> Female
+                                        <input type="radio" name="gender" <?php if ($_SESSION['user']['gender'] == 'Other')  echo ' checked="checked"';?> value="Other"> Other
                                     </td>
                                 </tr>
                                 <tr>
@@ -110,7 +112,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="editProfile.php">Edit Profile</a>
+                                        <input type="submit" name="editClick" value="Submit">
                                       </td>
                                 </tr>
                             </table>
