@@ -23,14 +23,49 @@
 		</tr>
 
 		<tr>
-			<td>1</td>
-			<td><?=$_SESSION['current_user'][0]?></td>	
-			<td><?=$_SESSION['current_user'][2]?></td>
-			<td><?=$_SESSION['current_user'][1]?></td>
-			<td>
-				<a href="edit.php">Edit</a> |
-				<a href="delete.php">Delete</a>
-			</td>
+			<?= 
+				$count=1;
+				$file = fopen('../models/user.txt','r');
+
+				while(!feof($file))
+				{
+					$user = fgets($file);
+					$userArray = explode('|',$user);
+					$_SESSION['current_user'] = $userArray;
+
+					if($userArray!=[''])
+					{
+						echo "<tr>";
+
+							echo "<td>"
+									.$count.
+								"</td>";
+
+							echo "<td>" 
+									.$userArray[0]. 
+								"</td>";
+
+							echo "<td>" 
+									.$userArray[2]. 
+								"</td>";
+
+							echo "<td>" 
+									.$userArray[1]. 
+								"</td>";
+							
+							echo "<td>";
+									echo "<a href='edit.php'> EDIT </a> | ";
+									echo "<a href='delete.php'> DELETE </a> | ";
+								"</td>";
+
+						echo "<tr>";
+					}
+					$count++;
+					
+				}
+			
+			
+			?>
 		</tr>
 
 		<!-- <tr>
