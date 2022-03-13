@@ -28,7 +28,7 @@
 						echo "<ul>";
 							echo "<li><a href='viewProfile.php'>View Profile</a></li>";
 							echo "<li><a href='../views/editAdminProfile.php?id=".$_SESSION['current_user'][0]."'>Edit Profile</a></li>";
-							echo "<li><a href='changePP.php'>Change Profile Picture</a></li>";
+							echo "<li><a href='../views/changePP.php'>Change Profile Picture</a></li>";
 							echo "<li><a href='changePassword.php'>Change Password</a></li>";
 							echo "<li><a href='addAdmin.php'> Add Admin </a></li>";
 							echo "<li><a href='userlist.php'> User List </a> </li>";

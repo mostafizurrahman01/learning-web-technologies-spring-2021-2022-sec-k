@@ -1,18 +1,21 @@
 <?php 
-    require_once('header.php');
-    
-    if (isset($_POST['Submit'])) {
-        $path_parts = pathinfo($_FILES["img"]["name"]);
-        $extension = $path_parts['extension'];
-        if($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension =="gif"){
-            $img_name = $_FILES['img']['name'];
-            $tmp_img_name = $_FILES['img']['tmp_name'];
-            move_uploaded_file($tmp_img_name, $img_name);
-            rename($img_name, "image.png");
-        }else{
-            echo "Invalid file format";
-        }
-    }
+    require('header.php');
+
+    if(isset($_REQUEST['submit']))
+    {
+       $src = $_FILES['myfile']['tmp_name'];
+       $des = "upload/".$_FILES['myfile']['name'];
+
+       if(move_uploaded_file($src, $des))
+       {
+           echo "success";
+       }
+       else
+       {
+           echo "error";
+       }
+
+   }
 ?>
 
 <!DOCTYPE html>
@@ -85,11 +88,10 @@
                 <td width="400px">
                     <fieldset>
                         <legend>PROFILE PICTURE</legend> 
-                        <form action="" method="post" enctype='multipart/form-data'>
-                        <img src="image.png" alt="Profile Picture"> <br>
-                        <input type="file" name="img">
-                        <hr>
-                        <input type="submit" name="submit" value="Submit">
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            Image: <input type="file" name="myfile">
+                            <input type="submit" name="submit" value="Submit">
+                        </form> 
                     </fieldset>
                 </td>
         </tr>  
