@@ -1,6 +1,18 @@
 <?php 
     require_once('header.php');
-
+    
+    if (isset($_POST['Submit'])) {
+        $path_parts = pathinfo($_FILES["img"]["name"]);
+        $extension = $path_parts['extension'];
+        if($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension =="gif"){
+            $img_name = $_FILES['img']['name'];
+            $tmp_img_name = $_FILES['img']['tmp_name'];
+            move_uploaded_file($tmp_img_name, $img_name);
+            rename($img_name, "image.png");
+        }else{
+            echo "Invalid file format";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -73,12 +85,11 @@
                 <td width="400px">
                     <fieldset>
                         <legend>PROFILE PICTURE</legend> 
-                        <form method="post" action="">
-                            <img src="image.png" alt=""></br>
-                            <input type="file" name="img" value=""> <br />
-                            <input class="submit" type="submit" name="submit" value="Submit">
-
-                        </form>
+                        <form action="" method="post" enctype='multipart/form-data'>
+                        <img src="image.png" alt="Profile Picture"> <br>
+                        <input type="file" name="img">
+                        <hr>
+                        <input type="submit" name="submit" value="Submit">
                     </fieldset>
                 </td>
         </tr>  
