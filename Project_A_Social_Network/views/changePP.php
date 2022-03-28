@@ -1,14 +1,20 @@
 <?php 
     require('header.php');
+    
 
     if(isset($_REQUEST['submit']))
     {
+       
        $src = $_FILES['myfile']['tmp_name'];
        $des = "upload/".$_FILES['myfile']['name'];
+       $moveFile = move_uploaded_file($src, $des);
 
-       if(move_uploaded_file($src, $des))
+       if($moveFile)
        {
-           echo "success";
+            $file = fopen('../models/profileUpload.txt', 'a');
+            fwrite($file, $moveFile);
+			fclose($file);
+            echo "success";
        }
        else
        {
@@ -65,8 +71,8 @@
         <table border="2" class="table" width="100%">
                 <td class="editNav">
                     Logged in as
-                    <a href="viewProfile.php"><?=$_SESSION['current_user'][1]?></a> |
-                    <a href="logout.php">Logout</a>
+                    <a href="../views/viewProfile.php"><?=$_SESSION['current_user'][1]?></a> |
+                    <a href="../controllers/logout.php">Logout</a>
                 </td>
             <tr width="600px">
                 <td width="100px">

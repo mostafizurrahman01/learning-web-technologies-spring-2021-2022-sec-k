@@ -7,7 +7,11 @@
 	<title>Home Page</title>
 </head>
 <body>
-	<h1>Welcome</h1>
+
+	<h1>Welcome <a href="../views/viewProfile.php"><?=$_SESSION['current_user'][1]?></a>
+	| <a href="../controllers/logout.php">Logout</a>
+
+	</h1> 
 
 	<?php
 		$id = ''; 
