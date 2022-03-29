@@ -12,16 +12,15 @@
         $email = $_POST['email'];
         $gender = $_POST['gender'];
 
-        // if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-        if(!empty($name) && !empty($user_name) && !empty($password) && !empty($email) && !empty($gender))
+        if(!empty($name) && !empty($user_name) && !empty($password) && !empty($email) && !empty($gender) && !is_numeric($user_name))
         {
 
             $user_id = random_num(10);
-            $query = "insert into users (user_id, name, user_name, password, email,gender) values('$user_id', '$name, '$user_name', '$password','$email','$gender')";
+            $query = "insert into users (user_id, name, user_name, password, email, gender) values('$user_id', '$name', '$user_name', '$password','$email','$gender')";
 
             mysqli_query($con, $query);
-
             header("Location: login.php");
+
             die;
         }
         else {
@@ -70,12 +69,28 @@
 
     <div id="box">
         <form method="post">
-            <div style="font-size: 20px; margin: 10px; color:white;">SignUp</div>
-            <input id="text" type="text" name="name"/><br/><br/>
-            <input id="text" type="text" name="user_name"/><br/><br/>
-            <input id="text" type="password" name="password"/><br/><br/>
-            <input id="text" type="email" name="email"/><br/><br/>
-            <input id="text" type="gender" name="gender"/><br/><br/>
+            <div style="font-size: 20px; margin: 20px; color:white;">SignUp</div>
+            <label for="name">Name
+                <input id="text" type="text" name="name"/><br/><br/>
+            </label>
+            
+            <label for="username">Username
+                <input id="text" type="text" name="user_name"/><br/><br/>
+            </label>
+            
+            <label for="password">Password
+                <input id="text" type="password" name="password"/><br/><br/>
+            </label>
+            
+            <label for="email">Email
+                <input id="text" type="email" name="email"/><br/><br/>
+            </label>
+
+            <label for="gender">Gender
+                <input type="radio" name="gender" value="Male"/>Male
+                <input type="radio" name="gender" value="Female"/>Female
+                <br/><br/>
+            </label>
             <input id="button" type="submit" name="Login"/><br/><br/>
             <a href="login.php">Sign Up</a><br/><br/>
         </form>
